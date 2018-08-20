@@ -9,9 +9,15 @@
   <!-- Environments -->
   <!-- https://github.com/feiss/aframe-environment-component/ -->
   <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+  
   <!-- 3D Fonts -->
   <!-- https://github.com/ngokevin/kframe/tree/master/components/text-geometry/ -->
   <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
+
+  <!-- Layout component -->
+  <!-- https://www.npmjs.com/package/aframe-layout-component -->
+  <script src="https://unpkg.com/aframe-layout-component@4.2/dist/aframe-layout-component.min.js"></script>
+
 </head>
 
 <body>
@@ -63,21 +69,23 @@
 
     <!-- OBJECTS -->
     <!-- 3d -->
-    <a-collada-model src="#object" position="5 0 -5"></a-collada-model>
+    <a-collada-model src="#object" position="5 0 -5" scale="50 50 50dw"></a-collada-model>
     <!-- Href -->
-    <a-link href="https://www.moka.tv" title="Moka" image="#work-4" position="-4 2 -3"></a-link>
-    <a-entity link="
-      href: https://www.moka.tv; 
-      backgroundColor: yellow;
-      borderColor: green;
-      peekMode: true;
-      highlighted: false;
-      highlightedColor: red;  
-      image: #work-4; 
-      title: Moka-1;"
-      position= "0 2 -4">
+    <a-entity layout="type: line; radius: 3; margin: 3" position="0 5 -3">
+      <a-link href="https://www.moka.tv" title="Moka" image="#work-4" position="-4 2 -3"></a-link>
+      <a-entity link="
+        href: https://www.moka.tv; 
+        backgroundColor: yellow;
+        borderColor: green;
+        peekMode: true;
+        highlighted: false;
+        highlightedColor: red;  
+        image: #work-4; 
+        title: Moka-1;"
+        position= "0 2 -4">
+      </a-entity>
+      <a-link href="https://www.moka.tv" title="Moka" image="#work-4" position="4 2 -3"></a-link>
     </a-entity>
-    <a-link href="https://www.moka.tv" title="Moka" image="#work-4" position="4 2 -3"></a-link>
     <!-- On hover trigger the highlithed TRUE para animar los bordes -->
     <!-- Images -->
     <a-image position="0.4 5.8 -8" width="12" height="4.5" src="#work-1">
@@ -94,8 +102,17 @@
     <!-- Video-->
     <a-video src="#video" width="16" height="9" position="0 0 -25"></a-video>
     <!-- Font -->
-    <a-entity text-geometry="value: What's up" position="0 1 -2"></a-entity>
-    <a-entity text-geometry="value: Dog?; font: #optimerBoldFont" position="0 0.2 -2"></a-entity>
+    <a-entity text-geometry="
+      value: MOKA;
+      size: 1;" 
+      position="0 1 -2">
+    </a-entity>
+    <a-entity text-geometry="
+      value: Creative Agency;
+      size: 1; 
+      font: #optimerBoldFont;"
+      position="0 0.2 -2">
+    </a-entity>
   </a-scene>
 
   <!-- SCRIPT FOR ANIMATION BEHAVE-->
